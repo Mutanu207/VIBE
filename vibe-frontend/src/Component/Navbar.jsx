@@ -16,7 +16,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 const drawerWidth = 240;
-const navItems = ['About', 'How It Works'];
+const navItems = ['Home', 'About', 'How It Works'];
 
 function Navbar(props) {
   const { window } = props;
@@ -27,7 +27,7 @@ function Navbar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center'}}>
       <Typography variant="h6" sx={{ my: 2 }}>
         VIBE
       </Typography>
@@ -54,7 +54,7 @@ function Navbar(props) {
         component="nav"
         elevation={0}
         sx={{
-          background: 'darkblue',
+          background: 'none',
           boxShadow: 'none'
         }}
       >
@@ -93,10 +93,11 @@ function Navbar(props) {
           onClose={handleDrawerToggle}
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
+            BackdropProps: {style: {backgroundColor: 'transparent'}},
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: 'rgba(0,0,0,0.3)', boxShadow: 'none', color: 'white' },
           }}
         >
           {drawer}
