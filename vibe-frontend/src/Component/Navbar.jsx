@@ -14,7 +14,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-
+import { Link } from 'react-router-dom';
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'How It Works'];
 
@@ -36,7 +36,7 @@ function Navbar(props) {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}
-                            component="a" href={`#${item}`}>
+                            component={Link} to={`/${item.toLowerCase().replace(/\s/g, '-')}`}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -78,7 +78,7 @@ function Navbar(props) {
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: 'white' }}
-                      component="a" href={`#${item}`}>
+                      component={Link}  to={`/${item.toLowerCase().replace(/\s/g, '-')}`}>
                 {item}
               </Button>
             ))} 
