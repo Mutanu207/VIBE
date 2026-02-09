@@ -2,8 +2,9 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import TextField from "@mui/material/TextField";
+import {useState} from "react";
 function MoodPage(){
+    const [mood, setMood] = useState("");
     return(
         <Box sx={{ backgroundColor: "#0b1c2d",
             minHeight: "100vh",
@@ -27,9 +28,19 @@ function MoodPage(){
                     label="Mood"
                     placeholder="I miss my Grandma"
                     variant="outlined"
+                    value={mood}
+                    onChange={(e) => setMood(e.target.value)}
                     sx={{
-                        backgroundColor: 'white',
-                        borderRadius: 1, }} />
+                        "& .MuiOutlinedInput-root": {
+                            "& fieldset": {
+                                borderColor: "white",
+                            },
+                            "&:hover fieldset": {
+                                borderColor: "#b388ff",
+                            },
+                            "&.Mui-focused fieldset": {
+                                borderColor: "#b388ff",
+                            },}}} />
 
             </Container>
         </Box>
