@@ -25,7 +25,7 @@ function AboutPage() {
                 "VIBE is my first project that i have built to grow my skills for the market.
                 I got this idea from a fullstack developer on instagram @elacodes who built the same project
                 Which made me think i do sometimes struggle finding music that matches my mood and i end up not listening to anything.
-                So i decided to build this project to help myseld and my friends to find music that matches our mood.
+                So i decided to build this project to help myself and my friends to find music that matches our mood.
                 Its not a big project but im proud of it and i hope you find it useful.This project will be continously updated as i grow my skills."
             </Typography>
         </Container>
