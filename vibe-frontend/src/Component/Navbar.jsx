@@ -16,7 +16,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'How It Works'];
+const navItems = ['Home', 'About'];
 
 function Navbar(props) {
   const { window } = props;
