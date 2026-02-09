@@ -40,8 +40,10 @@ function MoodPage(){
                             },
                             "&.Mui-focused fieldset": {
                                 borderColor: "#b388ff",
-                            },}}} />
-
+                            },},
+                            color:"white",
+                            borderColor:"grey",
+                            borderRadius: "10px"}} />
             </Container>
         </Box>
 
