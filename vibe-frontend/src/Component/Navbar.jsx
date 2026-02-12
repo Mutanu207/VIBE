@@ -36,7 +36,7 @@ function Navbar(props) {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}
-                            component={Link} to={`/${item.toLowerCase().replace(/\s/g, '-')}`}>
+                            component={Link} to={ item==='Home' ? `/` : `/${item.toLowerCase().replace(/\s/g, '-')}`}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -78,7 +78,7 @@ function Navbar(props) {
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: 'white' }}
-                      component={Link}  to={`/${item.toLowerCase().replace(/\s/g, '-')}`}>
+                      component={Link}  to={item==='Home'? `/` : `/${item.toLowerCase().replace(/\s/g, '-')}`}>
                 {item}
               </Button>
             ))} 

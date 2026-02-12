@@ -2,7 +2,9 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import {motion} from "framer-motion";
 import {useState} from "react";
+import PrimaryButton from "../Component/PrimaryButton";
 function MoodPage(){
     const [mood, setMood] = useState("");
     return(
@@ -15,6 +17,11 @@ function MoodPage(){
             alignItems: 'center'
         }}>
             <Container maxWidth="md">
+                 <motion.div
+            initial={{y:80, opacity: 0}}
+            animate={{y:0, opacity:1}}
+            transition={{duration: 0.5, ease: "easeOut"}}
+            >
                 <Typography component="h1" variant="h3" gutterBottom
                             sx={{
                                 color: 'white',
@@ -23,6 +30,12 @@ function MoodPage(){
                             }}>
                     Hello There
                 </Typography>
+                </motion.div>
+                <motion.div
+            initial={{y:80, opacity: 0}}
+            animate={{y:0, opacity:1}}
+            transition={{duration: 0.9, ease: "easeOut"}}
+            >
                 <TextField
                     fullWidth
                     label="Mood"
@@ -30,6 +43,7 @@ function MoodPage(){
                     variant="outlined"
                     value={mood}
                     onChange={(e) => setMood(e.target.value)}
+
                     sx={{
                         "& .MuiOutlinedInput-root": {
                             "& fieldset": {
@@ -40,10 +54,31 @@ function MoodPage(){
                             },
                             "&.Mui-focused fieldset": {
                                 borderColor: "#b388ff",
-                            },},
-                            color:"white",
-                            borderColor:"grey",
-                            borderRadius: "10px"}} />
+                            },
+                            borderRadius:"10px"},
+                          "& .MuiInputBase-input": {
+                          color: "#fff",
+                          "&::placeholder": { color: "#fff" }
+                        },
+                        "& .MuiInputLabel-root": {
+                          color: "rgba(255,255,255,0.7)"
+                        },
+                        "& .MuiInputLabel-root.Mui-focused": {
+                          color: "#b388ff"
+                        }}} /> 
+                        </motion.div>
+                        <motion.div
+                            initial={{y:80, opacity: 0}}
+                            animate={{y:0, opacity:1}}
+                            transition={{duration: 0.13, ease: "easeOut"}} >
+                        <Box sx={{ mt: 4, display: "flex", justifyContent: "center" }}>                                        
+                        <PrimaryButton background="#8239f7ff" 
+                                        color="white" 
+                                        size="large">
+                            Fetch Music
+                        </PrimaryButton>
+                        </Box>
+                        </motion.div>
             </Container>
         </Box>
 
