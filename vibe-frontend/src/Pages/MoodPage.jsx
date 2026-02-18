@@ -30,12 +30,6 @@ function MoodPage(){
                             }}>
                     Hello There
                 </Typography>
-                </motion.div>
-                <motion.div
-            initial={{y:80, opacity: 0}}
-            animate={{y:0, opacity:1}}
-            transition={{duration: 0.9, ease: "easeOut"}}
-            >
                 <TextField
                     fullWidth
                     label="Mood"
@@ -66,11 +60,6 @@ function MoodPage(){
                         "& .MuiInputLabel-root.Mui-focused": {
                           color: "#b388ff"
                         }}} /> 
-                        </motion.div>
-                        <motion.div
-                            initial={{y:80, opacity: 0}}
-                            animate={{y:0, opacity:1}}
-                            transition={{duration: 0.13, ease: "easeOut"}} >
                         <Box sx={{ mt: 4, display: "flex", justifyContent: "center" }}>                                        
                         <PrimaryButton background="#8239f7ff" 
                                         color="white" 
