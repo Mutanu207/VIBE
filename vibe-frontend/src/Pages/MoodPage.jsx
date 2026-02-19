@@ -5,8 +5,17 @@ import Container from "@mui/material/Container";
 import {motion} from "framer-motion";
 import {useState} from "react";
 import PrimaryButton from "../Component/PrimaryButton";
+import getMusic from "../service/api"; 
 function MoodPage(){
     const [mood, setMood] = useState("");
+    const handleSubmit = async()=> {
+        try {
+            const response = await getMusic(mood);
+            console.log(response.data);
+        } catch (error) {
+            console.error("Error fetching music:", error);
+        }
+    }
     return(
         <Box sx={{ backgroundColor: "#0b1c2d",
             minHeight: "100vh",
@@ -63,7 +72,8 @@ function MoodPage(){
                         <Box sx={{ mt: 4, display: "flex", justifyContent: "center" }}>                                        
                         <PrimaryButton background="#8239f7ff" 
                                         color="white" 
-                                        size="large">
+                                        size="large"
+                                        onClick={handleSubmit}>
                             Fetch Music
                         </PrimaryButton>
                         </Box>
