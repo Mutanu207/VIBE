@@ -1,11 +1,11 @@
-import { fetchEmotions } from "../ai/emotion.service";
-import { fetchPlaylist } from "../reccomendation/reccomedation.service";
-import { searchYoutubeVIdeo } from "../reccomendation/playlist";
+import { fetchEmotions } from "../ai/emotion.service.js";
+import { fetchPlaylist } from "../reccomendation/reccomedation.service.js";
+import { searchYoutubeVIdeo } from "../reccomendation/playlist.service.js";
  export const getMood = async (req,res) => {
     const {mood} = req.body; //input from user//
     try {
-        const emotions = await fetchEmotions(mood);
-        const reccomendations = await fetchPlaylist(emotions);//from here we will get the songs//
+        const emotion = await fetchEmotions(mood);
+        const reccomendations = await fetchPlaylist(emotion);//from here we will get the songs//
        const playlist = await searchYoutubeVIdeo(reccomendations)
        console.log(playlist);
     } catch (error) {

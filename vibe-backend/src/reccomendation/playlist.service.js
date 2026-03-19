@@ -10,6 +10,7 @@ const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
                     key: YOUTUBE_API_KEY,
                     maxResults: 1,
                     type: 'video'}});
+                    console.log(response.data);
                     const video= response.data.items[0];
                     return {
                         title: song.title,
