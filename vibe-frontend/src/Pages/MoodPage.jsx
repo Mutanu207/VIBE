@@ -2,10 +2,10 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import {motion} from "framer-motion";
-import {useState} from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 import PrimaryButton from "../Component/PrimaryButton";
-import getMusic from "../service/api"; 
+import { getMusic } from "../service/api.js";    
 function MoodPage(){
     const [mood, setMood] = useState("");
     const handleSubmit = async()=> {
