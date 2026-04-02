@@ -10,7 +10,7 @@ function App() {
         <>
         <Navbar />
         <Routes>
-          <Route path="/home" element={<LandingPage />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/mood" element={<MoodPage />} />
         </Routes>
@@ -18,3 +18,4 @@ function App() {
   );
 }
 export default App; 
+
