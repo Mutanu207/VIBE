@@ -2,10 +2,20 @@
   "name": "vibe-backend",
   "version": "1.0.0",
   "description": "backend for music reccomendation system",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "author": "mutanu",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@huggingface/inference": "^4.13.12",
+    "axios": "^1.13.6",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "groq-sdk": "^0.37.0",
+    "nodemon": "^3.1.11"
+  }
 }
